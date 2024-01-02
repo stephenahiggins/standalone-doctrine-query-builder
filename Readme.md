@@ -8,7 +8,7 @@ All credit goes to the original Doctrine team.
 Add the repository to your project's `composer.json`.
 
 ## Usage
-```
+```php
 use DoctrineStandalone\StandaloneQueryBuilder;
 
 $qb = new StandaloneQueryBuilder();
@@ -19,7 +19,7 @@ $qb->select('*')
     ->rightJoin('tt', "test_table4", 'tt4', "tt.id = tt4.id")
     ->setMaxResults(100);
     
-/// Get the SQL
+// Get the SQL
 $query = $qb->getSQL();
 ```
 
