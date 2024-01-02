@@ -17,9 +17,9 @@
     "phpunit/phpunit": "9.6.13"
   },
   "autoload": {
-    "psr-4": { "DoctrineStandalone\\": "src" }
+    "psr-4": { "DoctrineStandalone\\": "src/" }
   },
   "autoload-dev": {
-    "psr-4": { "DoctrineStandalone\\Tests\\": "tests" }
+    "psr-4": { "DoctrineStandalone\\Tests\\": "tests/" }
   }
 }
