@@ -1,6 +1,6 @@
 <?php
 
-namespace DoctrineStandalone;
+namespace DoctrineQueryBuilder\Query;
 
 use Doctrine\DBAL\Cache\QueryCacheProfile;
 use Doctrine\DBAL\Connection;

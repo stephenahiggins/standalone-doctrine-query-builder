@@ -9,8 +9,6 @@ Add the repository to your project's `composer.json`.
 
 ## Usage
 ```php
-use DoctrineStandalone\StandaloneQueryBuilder;
-
 $qb = new StandaloneQueryBuilder();
 $qb->select('*')
     ->from("test_table", 'tt')

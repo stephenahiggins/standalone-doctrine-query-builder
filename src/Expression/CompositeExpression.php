@@ -1,6 +1,6 @@
 <?php
 
-namespace DoctrineStandalone\Expression;
+namespace DoctrineQueryBuilder\Query\Expression;
 
 use Countable;
 use Doctrine\Deprecations\Deprecation;

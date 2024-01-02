@@ -1,13 +1,13 @@
 <?php
 
-namespace DoctrineStandalone;
+namespace DoctrineQueryBuilder\Query;
 
 use Doctrine\DBAL\Exception;
 
 use function implode;
 
 /** @psalm-immutable */
-class QueryException extends \Exception
+class QueryException extends Exception
 {
     /**
      * @param string   $alias

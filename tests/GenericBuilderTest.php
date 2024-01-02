@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace DoctrineStandalone\Tests;
 
 use PHPUnit\Framework\TestCase;
-use DoctrineStandalone\StandaloneQueryBuilder;
+use DoctrineQueryBuilder\Query\StandaloneQueryBuilder;
 
 class GenericBuilderTest extends TestCase
 {

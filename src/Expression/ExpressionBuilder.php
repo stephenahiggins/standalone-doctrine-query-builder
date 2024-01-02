@@ -1,6 +1,6 @@
 <?php
 
-namespace DoctrineStandalone\Expression;
+namespace DoctrineQueryBuilder\Query\Expression;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\Deprecations\Deprecation;
