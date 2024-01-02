@@ -1,6 +1,6 @@
 <?php
 
-namespace DoctrineQueryBuilder\Query;
+namespace DoctrineQueryBuilder\Query\Exception;
 
 use Doctrine\DBAL\Exception;
 

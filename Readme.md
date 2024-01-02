@@ -6,6 +6,9 @@ All credit goes to the original Doctrine team.
 
 ## Installation
 Add the repository to your project's `composer.json`.
+```
+composer require stephenahiggins/doctrine-query-builder-standalone:dev-main
+```
 
 ## Usage
 ```php

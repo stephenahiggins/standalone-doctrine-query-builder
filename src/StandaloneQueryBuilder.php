@@ -10,6 +10,7 @@ use Doctrine\DBAL\Query\Expression\CompositeExpression;
 use Doctrine\DBAL\Statement;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\Deprecations\Deprecation;
+use DoctrineQueryBuilder\Query\Exception\QueryException;
 
 use function array_key_exists;
 use function array_keys;
