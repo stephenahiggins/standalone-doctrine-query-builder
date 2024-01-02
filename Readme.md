@@ -27,5 +27,4 @@ $query = $qb->getSQL();
 Run `make run-tests`.
 
 ## Support
-
-Please [open an issue](https://github.com/fraction/readme-boilerplate/issues/new) for support.
+Please open an issue. Pull requests are welcome.
