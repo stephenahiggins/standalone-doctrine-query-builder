@@ -313,7 +313,7 @@ class StandaloneQueryBuilder
      * Sets a query parameter for the query being constructed.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u')
      *         ->from('users', 'u')
      *         ->where('u.id = :user_id')
@@ -348,7 +348,7 @@ class StandaloneQueryBuilder
      * Sets a collection of query parameters for the query being constructed.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u')
      *         ->from('users', 'u')
      *         ->where('u.id = :user_id1 OR u.id = :user_id2')
@@ -524,7 +524,7 @@ class StandaloneQueryBuilder
      * USING AN ARRAY ARGUMENT IS DEPRECATED. Pass each value as an individual argument.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.id', 'p.id')
      *         ->from('users', 'u')
      *         ->leftJoin('u', 'phonenumbers', 'p', 'u.id = p.user_id');
@@ -561,7 +561,7 @@ class StandaloneQueryBuilder
      * Adds DISTINCT to the query.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.id')
      *         ->distinct()
      *         ->from('users', 'u')
@@ -582,7 +582,7 @@ class StandaloneQueryBuilder
      * USING AN ARRAY ARGUMENT IS DEPRECATED. Pass each value as an individual argument.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.id')
      *         ->addSelect('p.id')
      *         ->from('users', 'u')
@@ -621,7 +621,7 @@ class StandaloneQueryBuilder
      * a certain table.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->delete('users', 'u')
      *         ->where('u.id = :user_id')
      *         ->setParameter(':user_id', 1);
@@ -651,7 +651,7 @@ class StandaloneQueryBuilder
      * a certain table
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->update('counters', 'c')
      *         ->set('c.value', 'c.value + 1')
      *         ->where('c.id = ?');
@@ -681,7 +681,7 @@ class StandaloneQueryBuilder
      * a certain table
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->insert('users')
      *         ->values(
      *             array(
@@ -711,7 +711,7 @@ class StandaloneQueryBuilder
      * given alias, forming a cartesian product with any existing query roots.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.id')
      *         ->from('users', 'u')
      * </code>
@@ -733,7 +733,7 @@ class StandaloneQueryBuilder
      * Creates and adds a join to the query.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.name')
      *         ->from('users', 'u')
      *         ->join('u', 'phonenumbers', 'p', 'p.is_primary = 1');
@@ -755,7 +755,7 @@ class StandaloneQueryBuilder
      * Creates and adds a join to the query.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.name')
      *         ->from('users', 'u')
      *         ->innerJoin('u', 'phonenumbers', 'p', 'p.is_primary = 1');
@@ -784,7 +784,7 @@ class StandaloneQueryBuilder
      * Creates and adds a left join to the query.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.name')
      *         ->from('users', 'u')
      *         ->leftJoin('u', 'phonenumbers', 'p', 'p.is_primary = 1');
@@ -813,7 +813,7 @@ class StandaloneQueryBuilder
      * Creates and adds a right join to the query.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.name')
      *         ->from('users', 'u')
      *         ->rightJoin('u', 'phonenumbers', 'p', 'p.is_primary = 1');
@@ -842,7 +842,7 @@ class StandaloneQueryBuilder
      * Sets a new value for a column in a bulk update query.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->update('counters', 'c')
      *         ->set('c.value', 'c.value + 1')
      *         ->where('c.id = ?');
@@ -863,13 +863,13 @@ class StandaloneQueryBuilder
      * Replaces any previously specified restrictions, if any.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('c.value')
      *         ->from('counters', 'c')
      *         ->where('c.id = ?');
      *
      *     // You can optionally programmatically build and/or expressions
-     *     $qb = $conn->createQueryBuilder();
+     *     $newQuery = $qb;
      *
      *     $or = $qb->expr()->orx();
      *     $or->add($qb->expr()->eq('c.id', 1));
@@ -898,7 +898,7 @@ class StandaloneQueryBuilder
      * conjunction with any previously specified restrictions.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u')
      *         ->from('users', 'u')
      *         ->where('u.username LIKE ?')
@@ -966,7 +966,7 @@ class StandaloneQueryBuilder
      * USING AN ARRAY ARGUMENT IS DEPRECATED. Pass each value as an individual argument.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.name')
      *         ->from('users', 'u')
      *         ->groupBy('u.id');
@@ -1003,7 +1003,7 @@ class StandaloneQueryBuilder
      * USING AN ARRAY ARGUMENT IS DEPRECATED. Pass each value as an individual argument.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->select('u.name')
      *         ->from('users', 'u')
      *         ->groupBy('u.lastLogin')
@@ -1039,7 +1039,7 @@ class StandaloneQueryBuilder
      * Sets a value for a column in an insert query.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->insert('users')
      *         ->values(
      *             array(
@@ -1066,7 +1066,7 @@ class StandaloneQueryBuilder
      * Replaces any previous values, if any.
      *
      * <code>
-     *     $qb = $conn->createQueryBuilder()
+     *     $newQuery = $qb
      *         ->insert('users')
      *         ->values(
      *             array(
@@ -1391,7 +1391,7 @@ class StandaloneQueryBuilder
      *
      * Example:
      * <code>
-     *  $qb = $conn->createQueryBuilder();
+     *  $newQuery = $qb;
      *  $qb->select('u.*')
      *     ->from('users', 'u')
      *     ->where('u.username = ' . $qb->createPositionalParameter('Foo', ParameterType::STRING))
