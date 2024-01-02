@@ -1,0 +1,25 @@
+{
+  "name": "stephenahiggins/doctrine-query-builder-standalone",
+  "description": "A standalone version of the Doctrine Query Builder",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {"name": "Guilherme Blanco", "email": "guilhermeblanco@gmail.com"},
+    {"name": "Roman Borschel", "email": "roman@code-factory.org"},
+    {"name": "Benjamin Eberlei", "email": "kontakt@beberlei.de"},
+    {"name": "Jonathan Wage", "email": "jonwage@gmail.com"}
+  ],
+  "require": {
+    "php": "^7.2",
+    "doctrine/dbal": "3.7.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.6.13"
+  },
+  "autoload": {
+    "psr-4": { "DoctrineStandalone\\": "src" }
+  },
+  "autoload-dev": {
+    "psr-4": { "DoctrineStandalone\\Tests\\": "tests" }
+  }
+}
