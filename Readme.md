@@ -12,6 +12,8 @@ composer require stephenahiggins/doctrine-query-builder-standalone:dev-main
 
 ## Usage
 ```php
+use DoctrineQueryBuilder\Query\StandaloneQueryBuilder;
+
 $qb = new StandaloneQueryBuilder();
 $qb->select('*')
     ->from("test_table", 'tt')
@@ -19,9 +21,10 @@ $qb->select('*')
     ->leftJoin('tt', "test_table3", 'tt3', "tt.id = tt3.id")
     ->rightJoin('tt', "test_table4", 'tt4', "tt.id = tt4.id")
     ->setMaxResults(100);
-    
-// Get the SQL
+
 $query = $qb->getSQL();
+
+print "Query:" . $query.PHP_EOL;
 ```
 
 ### Running Tests
